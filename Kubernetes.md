@@ -37,7 +37,7 @@ Kubernetes is an open-source platform that automates the deployment, scaling, an
 
 ## 🏗️ Kubernetes cluster Architecture
 
-![Kubernetes Cluster Components](./imagesKubernetes_cluster.png)
+![Kubernetes Cluster Components](./images/Kubernetes_cluster.png)
 
 Kubernetes architecture follows a master-worker model, ensuring scalability, fault tolerance, and efficient orchestration.
 

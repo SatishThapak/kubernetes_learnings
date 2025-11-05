@@ -12,11 +12,12 @@
 
 - It ensures that the desired pod is added to new nodes and removed from deleted nodes accordingly.
 
-### What it's used for
-- Logging collection
-- Kube-proxy
-- Weave-net
-- Node monitoring
+### 🛠️ Common Use Cases
+DaemonSets are ideal for deploying system-level services across nodes, such as:
+- Log collection agents (e.g., Fluentd, Filebeat)
+- Network proxies (e.g., kube-proxy)
+- CNI plugins (e.g., Weave Net, Canal)
+- Node monitoring tools (e.g., Prometheus Node Exporter)
 
 ### Example of Daemonset:
 

@@ -19,13 +19,6 @@ DaemonSets are ideal for deploying system-level services across nodes, such as:
 - CNI plugins (e.g., Weave Net, Canal)
 - Node monitoring tools (e.g., Prometheus Node Exporter)
 
-### Example of Daemonset:
-
-![image](https://github.com/user-attachments/assets/71725083-89a7-4e93-a1ed-df4c8adc94c3)
-
-- In the above screenshot, you can see 2 daemonsets are deployed in the kube-system namespace. i.e, Canal and Kube-proxy.
-- Similarily, we can also create custom daemonset by following below steps.
-
 ### Steps to deploy daemonset:
 
 - You will see 1 manifest in the same directory (DaemonSet) with name daemonset-deploy.yaml.
@@ -35,4 +28,4 @@ kubectl apply -f daemonset-deploy.yaml
 ```
 - After applying, you will see the daemonset pods are created and replicas are equal to the number of nodes including control-plane.
 
-![image](https://github.com/user-attachments/assets/e07e794e-4557-4ad1-bb4b-dddc4001697c)
+![image](./images/daemonSet.png)

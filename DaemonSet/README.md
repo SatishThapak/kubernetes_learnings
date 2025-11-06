@@ -28,4 +28,4 @@ kubectl apply -f daemonset-deploy.yaml
 ```
 - After applying, you will see the daemonset pods are created and replicas are equal to the number of nodes including control-plane.
 
-![image](./images/daemonSet.png)
+![DaemonSet](./images/daemonSet.png)

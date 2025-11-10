@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/SatishThapak/kubernetes_learnings.git
-    targetRevision: main
+    targetRevision: HEAD
     path: nginx-deploy
   destination:
     server: https://kubernetes.default.svc

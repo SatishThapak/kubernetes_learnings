@@ -16,28 +16,9 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: thapak010189/custom-nginx:latest
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: web-content
-          mountPath: /usr/share/nginx/html
-      volumes:
-      - name: web-content
-        configMap:
-          name: nginx-web-content
-
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-web-content
-data:
-  index.html: |
-    <html>
-      <head><title>My Web App</title></head>
-      <body><h1>Hello from Nginx!</h1></body>
-    </html>
 
 ---
 apiVersion: v1
@@ -51,4 +32,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: ClusterIP
+  type: NodePort

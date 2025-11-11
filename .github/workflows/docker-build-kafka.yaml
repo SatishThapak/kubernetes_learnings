@@ -5,6 +5,7 @@ on:
     paths:
       - 'kafka-deploy/Dockerfile'
       - 'kafka-deploy/*.yaml'
+      - 'kafka-deploy/*.sh'
     branches:
       - main
 

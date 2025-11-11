@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'kafka-deploy/Dockerfile'
-      - 'kafka-deploy/*.sh'
       - 'kafka-deploy/*.yaml'
     branches:
       - main

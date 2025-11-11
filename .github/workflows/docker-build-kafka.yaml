@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - './kafka-deploy/Dockerfile'
-      - './kafka-deploy/*.yaml'
+      - 'kafka-deploy/Dockerfile'
+      - 'kafka-deploy/*.yaml'
 
 jobs:
   build-and-push:
@@ -25,12 +25,17 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push image with multiple tags
+    - name: Build and push Kafka images
       uses: docker/build-push-action@v5
       with:
         context: ./kafka-deploy
+        file: ./kafka-deploy/Dockerfile
         push: true
         tags: |
           thapak010189/kafka-custom-image:kafka-broker-latest
           thapak010189/kafka-custom-image:zookeeper-latest
           thapak010189/kafka-custom-image:init-kafka-latest
+          thapak010189/kafka-custom-image:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        provenance: false

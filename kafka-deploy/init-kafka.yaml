@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: init-kafka
+  namespace: kafka
+spec:
+  template:
+    spec:
+      containers:
+      - name: init-kafka
+        image: thapak010189/kafka-custom-image:init-kafka-latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          kafka-topics.sh --bootstrap-server kafka-0.kafka.kafka.svc.cluster.local:9092 --list && \
+          kafka-topics.sh --bootstrap-server kafka-0.kafka.kafka.svc.cluster.local:9092 --create --if-not-exists --topic test-event --replication-factor 3 --partitions 2 && \
+          kafka-topics.sh --bootstrap-server kafka-0.kafka.kafka.svc.cluster.local:9092 --list
+      restartPolicy: OnFailure

@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - '/kafka-deploy/Dockerfile'
-      - '/kafka-deploy/*.yaml'
+      - './kafka-deploy/Dockerfile'
+      - './kafka-deploy/*.yaml'
 
 jobs:
   build-and-push:

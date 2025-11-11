@@ -5,10 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'kafka-deploy/Dockerfile'
       - 'kafka-deploy/*.yaml'
-      - 'kafka-deploy/*.sh'
-
+     
 jobs:
   build-and-push:
     runs-on: ubuntu-latest

@@ -34,3 +34,4 @@ jobs:
         context: ./kafka-deploy
         push: true
         tags: thapak010189/kafka-custom-image:${{ matrix.tag }}-latest
+

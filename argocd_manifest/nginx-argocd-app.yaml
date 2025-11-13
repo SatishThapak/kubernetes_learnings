@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/SatishThapak/kubernetes_learnings.git
     targetRevision: HEAD
-    path: nginx-app-manifest
+    path: nginx-deploy
   destination:
     server: https://kubernetes.default.svc
-    namespace: nginx-web
+    namespace: argocd-ngnix-web
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

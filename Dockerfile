@@ -1,15 +1,19 @@
-FROM apache/kafka-native:4.1.0
+# Use a specific, stable Nginx Alpine version
+FROM nginx:1.27.2-alpine
 
-# Optional: Add custom Kafka config (e.g., server.properties)
-# COPY server.properties /etc/kafka/docker/server.properties
+# Update Alpine packages to patch vulnerabilities
+RUN apk --no-cache upgrade
 
-# Optional: Use an environment variable to control behavior
-ENV KAFKA_ROLE=broker
+# Set working directory
+WORKDIR /usr/share/nginx/html
 
-# Default command based on role
-CMD ["bash", "-c", "\
-  if [ \"$KAFKA_ROLE\" = \"init\" ]; then \
-    /opt/init-kafka.sh; \
-  else \
-    /opt/kafka/bin/kafka-server-start.sh /etc/kafka/docker/server.properties; \
-  fi"]
+# Copy static site files
+COPY index.html /usr/share/nginx/html/
+
+# Expose HTTP port
+EXPOSE 80
+
+# Run Nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]
+
+

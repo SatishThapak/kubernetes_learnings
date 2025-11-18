@@ -48,7 +48,7 @@ metadata:
   labels:
     app: nginx-web
 spec:
-  type: LoadBalancer   # ✅ easier external access in cloud; use NodePort for Minikube
+  type: NodePort   # ✅ easier external access in cloud; use NodePort for Minikube
   selector:
     app: nginx-web
   ports:

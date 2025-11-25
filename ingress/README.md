@@ -112,3 +112,71 @@ kubectl apply -f nginx-deployment.yaml
 ```bash
 minikube addons enable ingress
 ```
+---
+
+## Create Ingress Resource
+
+```bash
+# ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apache-nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "tws.com"
+    http:
+      paths:
+      - path: /apache
+        pathType: Prefix
+        backend:
+          service:
+            name: apache-service
+            port:
+              number: 80
+      - path: /nginx
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
+
+```
+Apply it:
+
+```bash
+kubectl apply -f ingress.yaml
+```
+## Configure Host Mapping
+
+Map the Minikube IP to your custom domain (demo.com):
+
+```bash
+echo "$(minikube ip) tws.com" | sudo tee -a /etc/hosts
+```
+Or manually edit /etc/hosts and add:
+
+```bash
+<minikube-ip> demo.com
+``` 
+
+## Test Routing
+
+Access Apache:
+
+```bash
+curl http://tws.com/apache
+```
+Access NGINX:
+
+```bash
+curl http://tws.com/nginx
+```
+## Optional: Port Forward Services
+
+Apache: ```bash kubectl port-forward svc/apache-service 8081:80 --address 0.0.0.0 & ```
+NGINX: ``` bash kubectl port-forward svc/nginx-service 8082:80 --address 0.0.0.0 & ```
+

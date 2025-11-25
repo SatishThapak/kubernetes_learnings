@@ -177,6 +177,14 @@ curl http://tws.com/nginx
 ```
 ## Optional: Port Forward Services
 
-Apache: ```bash kubectl port-forward svc/apache-service 8081:80 --address 0.0.0.0 & ```
-NGINX: ``` bash kubectl port-forward svc/nginx-service 8082:80 --address 0.0.0.0 & ```
+Apache: 
+
+```bash 
+kubectl port-forward svc/apache-service 8081:80 --address 0.0.0.0 & 
+```
+NGINX: 
+
+``` bash 
+kubectl port-forward svc/nginx-service 8082:80 --address 0.0.0.0 & 
+```
 

@@ -168,12 +168,12 @@ Or manually edit /etc/hosts and add:
 Access Apache:
 
 ```bash
-curl http://tws.com/apache
+curl http://demo.com/apache
 ```
 Access NGINX:
 
 ```bash
-curl http://tws.com/nginx
+curl http://demo.com/nginx
 ```
 ## Optional: Port Forward Services
 

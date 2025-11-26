@@ -122,7 +122,7 @@ flowchart LR
 ### Shadow Deployment Strategy
 ```mermaid
 flowchart LR
-    User --> Old[Old Version]
-    Old --> Shadow[New Version (receives copy of traffic)]
+    User --> Old["Old Version"]
+    Old --> Shadow["New Version (copy traffic only)"]
 ```
 ---

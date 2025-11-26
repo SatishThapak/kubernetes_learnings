@@ -74,6 +74,7 @@ sequenceDiagram
 ---
 
 ### Rolling Update Strategy
+```mermaid
 sequenceDiagram
     participant User
     participant Pod1

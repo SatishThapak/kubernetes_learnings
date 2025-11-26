@@ -62,3 +62,12 @@ To make this README more engaging, add diagrams that illustrate each strategy. S
 > 📌 You can use tools like [Mermaid diagrams](https://mermaid-js.github.io/) or external flowchart tools to embed visuals directly here.
 
 ---
+### Recreate Strategy
+```mermaid
+sequenceDiagram
+    participant User
+    participant OldPods
+    participant NewPods
+    User->>OldPods: Access application
+    OldPods--xUser: Pods terminated
+    NewPods->>User: New version started

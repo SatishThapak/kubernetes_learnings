@@ -88,3 +88,41 @@ sequenceDiagram
     Pod3--xUser: Terminated
     New Pod3->>User: New version
 ```
+---
+
+### Blue-Green Strategy
+```mermaid
+flowchart LR
+    subgraph Blue[Blue Environment]
+        A[Old Version]
+    end
+    subgraph Green[Green Environment]
+        B[New Version]
+    end
+    User --> A
+    A -.switch traffic.-> B
+    User --> B
+```
+---
+
+### Canary Strategy
+```mermaid
+flowchart LR
+    User -->|90% traffic| Old[Old Version]
+    User -->|10% traffic| New[New Version]
+```
+---
+### A/B Testing Strategy
+```mermaid
+flowchart LR
+    User -->|Segment A| VersionA[Version A]
+    User -->|Segment B| VersionB[Version B]
+```
+---
+### Shadow Deployment Strategy
+```mermaid
+flowchart LR
+    User --> Old[Old Version]
+    Old --> Shadow[New Version (receives copy of traffic)]
+```
+---

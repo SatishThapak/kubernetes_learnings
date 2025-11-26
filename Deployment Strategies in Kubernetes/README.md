@@ -1,8 +1,9 @@
 # Kubernetes Deployment Strategies
 
 ## 📌 Overview
-Deployments in Kubernetes are a way to manage the lifecycle of applications. They define how applications are created, updated, and scaled, ensuring the desired state is maintained.  
-Deployment strategies are techniques used to release new versions of applications safely and efficiently.
+- Deployments in Kubernetes are a way to manage the lifecycle of applications. They define how applications are created, updated, and scaled, ensuring the desired state is maintained.  
+
+- Deployment strategies are techniques used to release new versions of applications safely and efficiently.
 
 ---
 

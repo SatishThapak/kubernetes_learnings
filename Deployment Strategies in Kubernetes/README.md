@@ -59,8 +59,6 @@ To make this README more engaging, add diagrams that illustrate each strategy. S
 - **A/B Testing Strategy** → Traffic split between versions based on rules.  
 - **Shadow Deployment Strategy** → Duplicate traffic sent to new version without affecting users.  
 
-> 📌 You can use tools like [Mermaid diagrams](https://mermaid-js.github.io/) or external flowchart tools to embed visuals directly here.
-
 ---
 ### Recreate Strategy
 ```mermaid
@@ -71,3 +69,21 @@ sequenceDiagram
     User->>OldPods: Access application
     OldPods--xUser: Pods terminated
     NewPods->>User: New version started
+```
+
+---
+
+### Rolling Update Strategy
+sequenceDiagram
+    participant User
+    participant Pod1
+    participant Pod2
+    participant Pod3
+    User->>Pod1: Old version running
+    Pod1--xUser: Terminated
+    New Pod1->>User: New version
+    Pod2--xUser: Terminated
+    New Pod2->>User: New version
+    Pod3--xUser: Terminated
+    New Pod3->>User: New version
+```

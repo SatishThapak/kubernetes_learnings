@@ -104,3 +104,6 @@ docker run -d -p 9090:80 thapak010189/nginx-web:green
 ```
 
 ----
+## Visit http://localhost:8080 → Blue environment
+
+## Visit http://localhost:9090 → Green environment

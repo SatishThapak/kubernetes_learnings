@@ -45,3 +45,62 @@ Blue-Green Deployment is a release management strategy that reduces downtime and
 ## ✅ Conclusion
 
 Blue-Green Deployment is a powerful technique for achieving **zero-downtime releases** and **risk-free rollbacks**, making it a cornerstone of modern DevOps practices.
+
+
+# 🚀 Blue-Green Deployment with Custom Nginx
+
+This project demonstrates a **Blue-Green Deployment** strategy using Docker and Kubernetes.  
+We build two versions of a simple Nginx web application — **Blue** and **Green** — each serving a slightly different HTML page to identify the environment.
+
+---
+
+
+---
+
+## 🛠️ Steps
+
+### 1. Prepare HTML Files
+- **index-blue.html** → Displays "Welcome (BLUE)" message.
+- **index-green.html** → Displays "Welcome (GREEN)" message.
+
+### 2. Create Dockerfiles
+- **Dockerfile.blue**
+  ```dockerfile
+  FROM nginx:alpine
+  COPY index-blue.html /usr/share/nginx/html/index.html
+
+- **Dockerfile.blue**
+  ```dockerfile
+  FROM nginx:alpine
+  COPY index-blue.html /usr/share/nginx/html/index.html
+
+### Build Docker Images
+
+# Build Blue image
+```bash
+docker build -f Dockerfile.blue -t thapak010189/nginx-web:blue .
+```
+# Build Green image
+```bash
+docker build -f Dockerfile.green -t thapak010189/nginx-web:green .
+```
+---
+
+### Push Images to Docker Hub
+```bash
+docker push thapak010189/nginx-web:blue
+docker push thapak010189/nginx-web:green
+```
+### Run Containers Locally ( optional)
+
+# Run Blue version
+```bash
+docker run -d -p 8080:80 thapak010189/nginx-web:blue
+```
+
+# Run Green version
+```bash
+docker run -d -p 9090:80 thapak010189/nginx-web:green
+```
+
+----

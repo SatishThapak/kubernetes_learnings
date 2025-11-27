@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: thapak010189/custom-nginx:latest 
+        image: thapak010189/nginx-web:blue
         ports:
         - containerPort: 5000
 ---

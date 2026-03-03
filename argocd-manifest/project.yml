@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: web-project
+  namespace: argocd
+spec:
+  description: Project for web applications
+  sourceRepos:
+  - https://github.com/SatishThapak/kubernetes_learnings.git
+  destinations:
+  - namespace: web
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'

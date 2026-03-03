@@ -97,28 +97,3 @@ kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
 ```
 
-This README is structured, professional, and ready to guide anyone through setting up your cluster.  
-
-### 
-                +----------------------+
-                |   Master Node        |
-                |----------------------|
-                | kube-apiserver       |
-                | kube-scheduler       |
-                | kube-controller-mgr  |
-                | etcd (data store)    |
-                | containerd runtime   |
-                +----------+-----------+
-                           |
-                           | Calico (CNI)
-                           |
-        --------------------------------------------
-        |                                          |
-+----------------------+              +----------------------+
-|   Worker Node 1      |              |   Worker Node 2      |
-|----------------------|              |----------------------|
-| kubelet              |              | kubelet              |
-| kube-proxy           |              | kube-proxy           |
-| containerd runtime   |              | containerd runtime   |
-| Pods (user workloads)|              | Pods (user workloads)|
-+----------------------+              +----------------------+

@@ -83,7 +83,7 @@ kubectl get nodes
 ```
 kubectl get pods -n kube-system
 ```
-![kube-system]](../images/kube-system.png)
+![kube-system](../images/kube-system.png)
 
 ### Optional Enhancements
 ### Enable kubectl autocompletion:

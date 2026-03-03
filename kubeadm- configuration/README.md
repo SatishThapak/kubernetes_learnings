@@ -82,16 +82,16 @@ kubectl get pods -n kube-system
 ---------
 
 ### Optional Enhancements
-# Enable kubectl autocompletion:
+### Enable kubectl autocompletion:
 ```
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 ```
-# Save join command automatically:
+### Save join command automatically:
 ```
 kubeadm token create --print-join-command > ~/join-worker.sh
 chmod +x ~/join-worker.sh
 ```
-# Deploy a test workload:
+### Deploy a test workload:
 ```
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort

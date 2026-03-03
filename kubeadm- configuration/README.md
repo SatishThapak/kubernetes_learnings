@@ -16,6 +16,7 @@ It includes scripts for **all nodes (master + workers)**, **master node initiali
   - `10250` (kubelet API)
   - `10251` (scheduler)
   - `10252` (controller-manager)
+  - `179`  (Calico uses BGP inside cluster, it required port to open)
 
 ---
 
@@ -77,11 +78,12 @@ Run this **only on worker nodes**.
 On the master node, check cluster status:
 ```
 kubectl get nodes
+```
+![nodes](../images/kubernetes.png)
+```
 kubectl get pods -n kube-system
 ```
----------
-
-![nodes](../images/kubernetes.png)
+![kube-system]](../images/kube-system.png)
 
 ### Optional Enhancements
 ### Enable kubectl autocompletion:
